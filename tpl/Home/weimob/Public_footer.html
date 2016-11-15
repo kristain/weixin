@@ -1,0 +1,126 @@
+<div class="footer">
+  <div class="footer-content clearfix">
+    <div class="foot-menu">
+			<p>
+				<a href="{pigcms::C('site_url')}" target="_blank">{pigcms::C('site_name')}首页</a>&nbsp;|&nbsp;
+				<a href="{pigcms::U('Home/Index/reg')}" target="_blank">申请入驻</a>&nbsp;|&nbsp;
+				<a href="{pigcms::U('Home/Index/proxy')}" target="_blank">渠道代理</a>&nbsp;|&nbsp;
+				<!--<a href="{pigcms::U('Home/Index/about')}" target="_blank">关于{pigcms::C('site_name')}</a>&nbsp;|&nbsp;-->
+				<a href="{pigcms::U('Home/Index/agents')}" target="_blank">授权认证</a>&nbsp;|&nbsp;
+				<a href="agent.php" target="_blank">代理商登录</a>&nbsp;|&nbsp;
+			</p>
+			<p>客服QQ：{pigcms::C('site_qq')}&nbsp;&nbsp;&nbsp;技术QQ：{pigcms::C('site_qq')}&nbsp;&nbsp;&nbsp;邮箱：{pigcms::C('site_email')}</p>
+      <p>公司地址：{pigcms::C('site_adress')}&nbsp;&nbsp;&nbsp;咨询热线：{pigcms::C('site_mp')}</p>
+    </div>
+		<div class="copyright">
+			Copyright (c) 2011-<?php echo date('Y',time());?> {pigcms::C('server_topdomain')}. All Rights Reserved {pigcms::C('copyright')} {pigcms::C('ipc')} {pigcms::C('counts')}
+ </div>
+</div>
+<!--<weixinerweima>-->
+<div class="erwei" title="微信扫一扫">
+	<span class="hudongzhushou">官方微信</span>
+	<div class="erwei_big" style="display:none;">
+		<p>扫一扫，关注{pigcms::C('site_name')}官方微信，体验{pigcms::C('site_name')}智能服务</p>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var erwei_time = null;
+		$(".erwei").hover(function(){
+			$(".erwei_big").show();
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+		$(".erwei_big").mouseenter(function(){
+			if(erwei_time){
+				clearTimeout(erwei_time);
+			}
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+	});
+</script>
+
+<!--<weixinerweima>-->
+<!-- Baidu Button BEGIN -->
+<!-- 将此代码放在适当的位置，建议在body结束前 -->
+<script id="bdaddtocite_shell"></script>
+<script>
+var bdShare_config_addtocite = {
+	"type":"slide"
+	,"pos":"left"
+	,"color":"black"
+	,"top":"200"
+	,"uid":"6847210"
+};
+document.getElementById("bdaddtocite_shell").src="http://bdimg.share.baidu.com/static/js/addtocite_shell.js?t=" + Math.ceil(new Date()/3600000);
+
+function zschref(){
+	window.location.href="{pigcms::C('site_url')}";
+}
+</script>
+<!-- Baidu Button END -->
+<!---返回顶部------->
+<div class="back2top" style="display:block"><a class="b_img" href="javascript:;"></a></div>
+<script>
+	function feedbackSubmit(){
+		var $data = {
+			feedback: $('#feedback-text').val(),
+			email: $('#feedback-input').val(),
+			url: self.location.href
+		};
+		$.post('/site/feedback', $data, function(rs){
+			alert(rs.error);
+			if (200 == rs.code)
+			{
+				$('#feedback, #feedback_cover').toggleClass('on');
+			}
+		}, 'json');
+	}
+</script>
+<script type="text/javascript">
+		$(document).ready(function(){
+		var hash=window.location.hash || "#site";
+		if(hash){
+			var lis=$("#nav_lis>li"),
+				divs=$("#nav_uls>div");
+			lis.each(function(index, v) {
+				if(hash == v.getAttribute("data-hash")){
+					v.className="hover";
+					//.var divs = $("#nav_uls>div");
+					for(var i=0,ci; ci = divs[i]; i++){
+						if(index == ci.getAttribute("data-index")){
+							$(ci).addClass("show");
+						}else{
+							$(ci).removeClass("show");
+						}
+					}
+			
+				}
+			});
+		}
+
+
+	$("#nav_lis").on("mouseover", function(e){
+			$(this).find("li").removeClass("hover");
+			e.target.className = "hover";
+			var index = e.target.getAttribute("data-index");
+			//
+			var divs = $("#nav_uls>div");
+			for(var i=0,ci; ci = divs[i]; i++){
+				if(index == ci.getAttribute("data-index")){
+					$(ci).addClass("show");
+				}else{
+					$(ci).removeClass("show");
+				}
+			}
+
+		});
+
+
+	});
+</script>

@@ -1,0 +1,259 @@
+<include file="Public:header"/>
+
+	<!--595 850-->
+<script language="javascript">
+	$(function () {
+		$("a").click(function () {
+			var rel = $(this).attr("rel");
+			if (rel) {
+				var pos = $(rel).offset().top-60;
+				$("html,body").animate({ scrollTop: pos }, 800);
+			}
+
+		})
+	})
+</script>
+<script>
+	$().ready(function(){
+
+		window.onscroll = window.onresize = function(){
+			showSideBar();
+		}
+	});
+	function showSideBar(){
+		if(!window.sideMenu){
+			window.sideMenu = $("#sideToolbar");
+		}
+		if((document.body.scrollTop||document.documentElement.scrollTop)>500){
+			sideMenu.addClass("on");
+		}else{
+			sideMenu.removeClass("on");
+		}
+	}
+
+
+
+</script>
+
+
+<div id="top"></div><style>
+	.table th, .table td {
+		padding: 8px;
+		line-height: 20px;
+		text-align: left;
+	  vertical-align:middle;
+		border-top: 1px solid #ddd;
+	}
+	#package{ width:1300px; margin: 49px auto 0 auto; }
+
+</style>
+<div id="package">
+<table id="listTable" class="table table-bordered table-hover dataTable table-striped" style="position:fixed; width:1300px;padding-top:1px; border-bottom:2px solid #999;" >
+<tbody>
+<tr style="background:#f5f5f5;">
+	<th rowspan="2" style="width:64px;">服务项</th>
+	<th rowspan="2" style="width:208px;">服务明细</th>
+	<pigcmslist array="groups" foreach="g">	
+	<th rowspan="2" style="width:51px;"><pigcmsif where="$i eq $count"></pigcmsif>{pigcms:$g.name}</th>
+    </pigcmslist>
+	<th colspan="8" style="text-align:center;">行业版</th>
+	<th rowspan="2">加盟版</th>
+	<th rowspan="2" style="width:20px;padding:6px; ">订阅号</th>
+	<th rowspan="2" style="width:20px;padding:6px;">服务号</th>
+	<th rowspan="2" style="width:19px;padding:6px;">认证服务号</th>
+</tr>
+<tr style="background:#f5f5f5;border-bottom:1px solid #bdbdbd;" >
+	<th style="width:60px;">微医疗</th>
+	<th style="width:60px;">微酒店</th>
+	<th style="width:60px;">微餐饮</th>
+	<th style="width:59px;">微汽车</th>
+	<th style="width:59px;">微房产</th>
+	<th style="width:59px;">微生活</th>
+	<th style="width:59px;">微商城</th>
+</tr>
+</table>
+<table id="listTable" class="table table-bordered table-hover dataTable table-striped" style="padding-top:113px;" >
+<tbody>
+<tr>
+	<td style="width:64px;">VIP价格</td>
+	<td style="width:208px;" >VIP只是流量套餐！</td>
+	<pigcmslist array="prices" foreach="g">
+	<td style="width:51px;"><pigcmsif where="$i eq $count"></pigcmsif>{pigcms:$g}元 / 月</td>
+	</pigcmslist>
+	<td style="width:60px;">不限</td>
+	<td style="width:60px;">不限</td>
+	<td style="width:60px;">不限</td>
+	<td style="width:59px;">不限</td>
+	<td style="width:59px;">不限</td>
+	<td style="width:59px;">不限</td>
+	<td style="width:59px;">不限</td>
+	<td style="width:52px;">不限</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+</tr>
+
+<tr >
+	<td>公众号</td>
+	<td>允许创建公众号数量</td>
+	<pigcmslist array="wechatNums" foreach="g">
+    <td <pigcmsif where="$i eq $count"> class="norightborder"</pigcmsif>>{pigcms:$g}</td>
+	</pigcmslist>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+</tr>
+<tr>
+	<td>自定义图文条数</td>
+	<td>每个月可以创建的图文回复数量</td>
+	<pigcmslist array="diynums" foreach="g">
+    <td <pigcmsif where="$i eq $count"> class="norightborder"</pigcmsif>>{pigcms:$g}</td>
+    </pigcmslist>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+</tr>
+<tr>
+	<td>请求数</td>
+	<td>每个月可以进行多少次回复请求</td>
+	<pigcmslist array="connectnums" foreach="g">
+    <td <pigcmsif where="$i eq $count"> class="norightborder"</pigcmsif>>{pigcms:$g}</td>
+    </pigcmslist>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+</tr>
+<tr>
+	<td>每月活动创建费次数</td>
+	<td>每月允许创建的大转盘等互动活动数量</td>
+	<pigcmslist array="activitynums" foreach="g">
+    <td <pigcmsif where="$i eq $count"> class="norightborder"</pigcmsif>>{pigcms:$g}</td>
+    </pigcmslist>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+</tr>
+<tr>
+	<td>每月会员卡开卡数量</td>
+	<td>每个月允许创建多少张会员卡提供给会员领取</td>
+	<pigcmslist array="create_card_nums" foreach="g">
+    <td <pigcmsif where="$i eq $count"></pigcmsif>>{pigcms:$g}</td>
+    </pigcmslist>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+</tr>
+<tr>
+	<td>版权信息</td>
+	<td>显示{pigcms:$f_siteName}版权</td>
+    <pigcmslist array="copyrights" foreach="g">
+<td <pigcmsif where="$i eq $count"> class="norightborder"</pigcmsif>><pigcmsif where="$g">无<else/>有</pigcmsif></td>
+    </pigcmslist>	
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+</tr>
+<tr>
+	<td>购买VIP套餐</td>
+	<td>简单购买流程提醒</td>
+	<pigcmslist array="create_card_nums" foreach="g">
+    <td <pigcmsif where="$i eq $count"> class=""</pigcmsif>><a  href="{pigcms::U('User/Alipay/index',array('gid'=>0))}"><em>充值</em></a></td>
+    </pigcmslist>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+</tr>
+<pigcmslist foreach="f" array="funs">
+<tr>
+
+    <td>{pigcms:$f.name}</td>
+	<td>{pigcms:$f.info}</td>
+<?php 
+if ($f['access']){
+	$i=1;
+	foreach ($f['access'] as $v){
+		
+
+?>
+    <td class="<?php if ($v){echo 'checked';}else{echo 'error';}?><?php if ($i==$count){echo ' norightborder';}?>"></td>
+ <?php 
+ $i++;
+ 	}
+}  
+?>
+
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>不限</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+</tr>
+                				</pigcmslist>
+</tbody></table>
+
+</div>
+<!--QQ咨询-->
+<script type="text/javascript">try{Dd('webpage_6').className='left_menu_on';}catch(e){}</script>
+<include file="Public:footer"/>

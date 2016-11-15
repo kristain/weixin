@@ -1,0 +1,33 @@
+<include file="Public:header"/>
+<div class="Public-content clearfix">
+	<div class="Public">
+		<h1 class="Public-h1">密码找回</h1>
+		<div class="Public-box clearfix">
+			<div class="main">
+				<form class="form-horizontal"  method="post" action="{pigcms::U('Users/checkpwd')}">
+					<div class="control-group">
+						<label class="control-label">用户名</label>
+						<div class="controls" >
+							<input class="text" type="text" name="username" />
+							<span class="maroon">*</span><span class="help-inline">长度为6~16位字符</span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">邮　箱</label>
+						<div class="controls">
+							<input class="text" type="email" name="email" />
+							<span class="maroon">*</span><span class="help-inline">注册时填写的邮箱</span>
+						</div>
+					</div>
+					<div class="control-group">
+						<div class="controls">
+                            <div class="login-btn-panel">
+							<input class="login-btn" type="submit" value="提交" />
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<include file="Public:footer"/>

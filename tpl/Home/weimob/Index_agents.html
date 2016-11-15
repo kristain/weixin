@@ -1,0 +1,19 @@
+<include file="Public:header"/>
+<div class="Public-content clearfix">
+    <div class="Public" id="authing">
+        <h1 class="Public-h1">代理商授权认证查询</h1>
+        <div class="Public-box1 clearfix">
+            <div class="reg-wrapper3">
+                <div class="agents">
+									<form method="post"><input  name="type" type="hidden" class="W_input" value="{pigcms:$Think.get.type}" />
+					<input type="text" name="domain" id="domain" maxlength="100" style="width:474px;" placeholder="请输入正确的代理商公司名称" autocomplete="off">
+					<input type="submit" id="btn_submit" value="授权查询" class="btn-5 btn-3" />
+					<p class="agents-error" id="error_tips" style="display:none;"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+		</form>
+<include file="Public:footer"/>
+</body>
+</html>

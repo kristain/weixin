@@ -1,0 +1,92 @@
+<include file="Public:header"/>
+<!-- banner -->
+<div class="banner gbanner">
+</div>
+<div class="Public-content clearfix">
+	<div class="Public" style="height:500px">
+		<h2 class="Public-h2">
+			重置密码
+		</h2>
+		<div class="Public-box clearfix">
+			<div class="main">
+				<div class="abody">
+					<div class="contaier wp cf">
+						<div class="think-login">
+							<div class="head">
+							</div>
+							<DIV class="body think-form ">
+            <form action="{pigcms::U('Users/resetpwd')}" method="post" class="login">
+			<input class="text" type="hidden" name="uid" value='{pigcms::$uid}'>
+												<TABLE width="970" height=320 align="center" cellspacing="15">
+										<TBODY>
+											<TR>
+												<TD width=115 rowspan="6">
+													&nbsp;
+												</TD>
+												<TD width=413 height="21">
+													&nbsp;
+												</TD>
+												<TD rowSpan=6 width=258>
+													<IMG alt="" src="{pigcms::RES}/img/erwei_big.jpg?BPm" width=200 height=200>
+												</TD>
+												<TD rowSpan=6 width=99>
+													&nbsp;
+												</TD>
+											</TR>
+											<TR>
+												<TD height="56">
+													用户名&nbsp;&nbsp;
+													<input class="text" type="text" name="username" />
+												</TD>
+											</TR>
+											<TR>
+											<TD height="56">
+                                                	密　码&nbsp;&nbsp;
+
+                                                      <input class="text" type="password" name="password">
+												</TD>
+											</TR>
+											<TR>
+											<TD height="56">
+                                            重复密码&nbsp;&nbsp;
+                                                    <input class="text" type="password" name="repassword">
+												</TD>
+											</TR>
+											<TR>
+												<TD height="36">
+													<P>
+                            <input class="submit" type="submit" value="重置">
+												</TD>
+											</TR>
+											<TR>
+												<TD height="100">
+													<p>
+														帐号审核：
+													</p>
+													<p>
+														自助审核方法：关注右侧官方微信号
+														（右侧扫一扫）
+													</p>
+													<p>
+														在微信中输入：审核+注册的用户名（不含+号）如：审核weixin
+													</p>
+													<p>
+														人工审核方法：客服QQ：{pigcms::C('site_qq')}，联系审核
+													</p>
+												</TD>
+											</TR>
+										</TBODY>
+									</TABLE>
+									<script type="text/javascript">try{Dd('webpage_6').className='left_menu_on';}catch(e){}</script>
+									</p>
+								</form>
+							</DIV>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<include file="Public:footer"/>
